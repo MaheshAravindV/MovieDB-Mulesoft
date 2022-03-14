@@ -1,8 +1,9 @@
 const { Pool } = require("pg"); // Library for DB connection
+require("dotenv").config();
 
-const connectionString = `postgres://postgres:${process.env.DBPASS}@localhost:5432/movies`; // DB Password is stored as a environment variable
+const connectionString = `postgres://postgres:${process.env.pass}@localhost:5432/movies`; // DB Password is stored as a environment variable
 
-// Structure of connectionString - 'postgress://username:password@address:port/dbname'
+// Structure of connectionString - 'postgres://username:password@address:port/dbname'
 
 const pool = new Pool({
   connectionString,
